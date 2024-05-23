@@ -1,0 +1,131 @@
+// modal
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .modal__container {
+    background-color: rgb(255, 255, 255);
+    width: 600px;
+    // min-height: 166px;
+    height: 280px;
+    border-radius: 1.25rem;
+    border: 3px solid #128080;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px -4px 16px 0px,
+      rgba(0, 0, 0, 0.1) 0px 8px 16px 0px;
+    animation: Showlogin ease 0.5s;
+    position: relative;
+  }
+
+  .container__close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 32px;
+    height: 32px;
+    font-size: 1.6rem;
+    color: #333;
+    background: #ccc;
+    border-radius: 50%;
+    padding: 0.2rem;
+    cursor: pointer;
+  }
+
+  .container__close:hover {
+    color: red;
+  }
+
+  .container__title {
+    text-align: center;
+    padding: 10px 20px;
+
+    .container__title_text {
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: #128080;
+      margin-top: 1rem;
+    }
+  }
+
+  .container__text {
+    margin-bottom: 0.8rem;
+  }
+  .container__img {
+    text-align: center;
+  }
+  .container__img img {
+    width: 60%;
+    height: auto;
+  }
+
+  .container__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    background: #128080;
+    width: 200px;
+    padding: 10px 20px;
+    border-radius: 0.6rem;
+    margin: 0 auto;
+    gap: 0.6rem;
+    color: #fff;
+  }
+}
+
+// mobile
+@media screen and (max-width: 600px) {
+  .modal__container {
+    margin: 0 8px;
+    height: 478px !important;
+  }
+
+  .container__text {
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 0.8rem;
+  }
+
+  .container__text {
+    margin-bottom: 2rem;
+  }
+
+  .container__title_text {
+    margin-top: 0.4em;
+  }
+}
+
+// tablet
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .modal__container {
+    margin: 0 8px;
+    width: 580px;
+    height: 510px !important;
+  }
+
+  .container__text {
+    font-size: 20px;
+    text-align: center;
+  }
+}
+
+// desktop
+@media screen and (min-width: 1024px) {
+  .modal__container {
+    height: 510px !important;
+    text-align: center;
+  }
+
+  .modal__container {
+    margin: 0 8px;
+  }
+}

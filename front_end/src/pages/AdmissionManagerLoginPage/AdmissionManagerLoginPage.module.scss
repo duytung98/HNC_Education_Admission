@@ -1,0 +1,69 @@
+:root {
+    --height_loginBrand: 142px;
+}
+
+.login-left-text {
+    color: var(--primary-color);
+}
+.login-brand-name {
+    color: var(--primary-color);
+}
+
+.login-form {
+    width: 660px;
+    border-color: var(--primary-color);
+    border-radius: 34px;
+}
+
+.login-title {
+    color: var(--primary-color);
+}
+
+.form-group {
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+
+.toggle-password{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+.toggle-btn{
+    position: absolute;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    &:hover{
+        color: #ccc;
+    }
+}
+
+.form-label {
+    width: 50px;
+    border-radius: 6px;
+}
+
+.form-control:focus {
+    outline: none;
+}
+
+.copyright-by,
+.copyright-brand {
+    font-size: 18px;
+    color: #ccc;
+    text-align: center;
+}
+
+.is-invalid {
+    border-color: red;
+}

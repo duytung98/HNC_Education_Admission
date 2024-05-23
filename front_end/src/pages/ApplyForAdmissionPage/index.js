@@ -1,0 +1,1 @@
+export { default as ApplyForAdmissionPage } from './ApplyForAdmissionPage';

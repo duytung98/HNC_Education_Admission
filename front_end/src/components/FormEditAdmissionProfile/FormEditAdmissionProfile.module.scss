@@ -1,0 +1,594 @@
+.edit-admission {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto 0;
+    background-color: var(--white-color);
+}
+
+.title {
+    position: relative;
+
+    .close {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        cursor: pointer;
+
+        &>svg {
+            width: 32px;
+            height: 32px;
+            color: red;
+        }
+    }
+}
+
+
+.title-text {
+    font-size: 48px;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+// Content
+.content {
+    padding-bottom: 20px;
+}
+
+.content-item {
+    padding-top: 24px;
+
+    &:first-child {
+        padding-top: 0;
+    }
+}
+
+.content-item-title span {
+    height: 1px;
+    background: #ccc;
+}
+
+.content-item-title .content-item-text {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+}
+
+.content-container {
+    padding: 0 24px;
+    margin: 0 auto 20px;
+
+}
+
+.content-container-item {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 24px;
+
+    &.content-full {
+        display: block;
+        width: 100%;
+        margin-top: 18px;
+    }
+}
+
+.content-full-item {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 24px;
+}
+
+.content-gioiTinhAndDanToc,
+.content-name {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 24px;
+}
+
+.content-infor {
+    margin-top: 18px;
+
+    &.message input,
+    .message select {
+        border-color: red;
+    }
+
+    & p.message {
+        color: red;
+        margin-top: 6px;
+        padding-left: 12px;
+    }
+
+    & p.content-item-input {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.content-item-label {
+    display: block;
+    font-size: 16px;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.content-item-input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding-left: 12px;
+
+    &.disable {
+        background: #cbd5e1;
+    }
+}
+
+.content-scores {
+    justify-content: space-between;
+    display: flex;
+}
+
+.content-Fieldofstudy-item,
+.content-infor-group {
+    display: flex;
+    align-items: center;
+}
+
+.content-Fieldofstudy-item {
+    & .content-item-label {
+        margin-bottom: 0;
+        margin-right: 48px;
+        text-wrap: nowrap;
+    }
+}
+
+.content-scores-item {
+    & .content-infor-group {
+        width: 210px;
+    }
+}
+
+.content-scores,
+.content-score-option {
+    & .content-item-label {
+        margin-bottom: 0;
+        margin-right: 24px;
+        text-wrap: nowrap;
+        width: 80%;
+    }
+
+    & .content-item-input {
+        text-align: center;
+        max-width: 50px;
+        width: 50px;
+        padding: calc(40px / 2 - 16px) calc(50px / 2 - 16px);
+    }
+
+    & select.content-item-input {
+        width: 160px;
+        text-align: left;
+        padding-left: 12px;
+
+        &~.content-item-input {
+            margin-left: 12px;
+        }
+    }
+}
+
+.content-score-option,
+.content-Fieldofstudy,
+.content-scores {
+    width: 688px;
+    margin: 0 auto;
+}
+
+.content-score-option {
+    & .content-item-label {
+        margin-bottom: 0;
+        margin-right: 12px;
+    }
+}
+
+.content-Fieldofstudy {
+    & .message {
+        margin-top: 6px;
+        color: red;
+        padding-left: 12px;
+    }
+}
+
+.btn-failed,
+.btn-print,
+.btn-success,
+.btn-update {
+    color: var(--white-color);
+}
+
+.btn-update {
+    background-color: #2563eb;
+
+    &:hover {
+        background-color: #3b82f6;
+    }
+}
+
+.btn-print {
+    background-color: #16a34a;
+
+    &:hover {
+        background-color: #22c55e;
+    }
+}
+
+.btn-failed {
+    background-color: #dc2626;
+
+    &:hover {
+        background-color: #ef4444;
+    }
+}
+
+.btn-success {
+    background-color: var(--primary-color);
+
+    &:hover {
+        background-color: #0891b2;
+    }
+}
+
+.content-note {
+    color: red;
+    font-style: italic;
+    margin-top: 24px;
+    padding: 0 24px;
+}
+
+.content-group-button {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0;
+}
+
+.content-images {
+
+    & th,
+    td {
+        color: var(--primary-color);
+    }
+}
+
+.btn-submit,
+.content-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 40px;
+    padding: 8px;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+
+}
+
+.content-images-list {
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background-color: #189393;
+}
+
+.content-btn {
+    margin: 0 auto;
+    margin-top: 16px;
+
+    &:hover {
+        border-color: var(--primary-color);
+        color: var(--primary-color);
+    }
+}
+
+
+.btn-submit {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.content-btn-icon {
+    margin-right: 6px;
+}
+
+.content-images-col-1 {
+    width: 10%;
+}
+
+.content-images-col-2 {
+    width: 50%;
+}
+
+.content-images-item {
+    width: calc(200px * 16 / 9);
+    height: 200px;
+    margin: 0 auto;
+    object-fit: cover;
+
+    &~.content-images-item {
+        margin-top: 6px;
+    }
+
+    &.empty {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+// Modal
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    cursor: pointer;
+    background-color: rgb(0, 0, 0, 0.25);
+}
+
+.modal-container {
+    position: relative;
+    animation: zoom 0.5s ease-in-out;
+    background-color: var(--white-color);
+}
+
+.modal-container-img {
+    overflow: auto;
+    height: 500px;
+    width: calc((500px) * 16 / 9);
+    aspect-ratio: 16 / 9;
+}
+
+.btn {
+    position: absolute;
+    right: 16px;
+    top: 12px;
+}
+
+.btn {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+}
+
+.btn-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: red;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    background: #fff;
+    border: 2px solid red;
+}
+
+.btn-close:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0.8);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+// Modbile adnd table
+@media (max-width: 63.9375em) {
+    .header-brand-title {
+        font-size: 16px;
+    }
+
+    .header-brand-subtitle {
+        font-size: 14px;
+    }
+
+    .header-title-text {
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    .content-scores {
+        flex-direction: column;
+    }
+
+    .content-Fieldofstudy,
+    .content-score-option,
+    .content-scores {
+        width: 100%;
+        margin: 0;
+    }
+
+    .content-Fieldofstudy-item,
+    .content-score-option,
+    .content-scores {
+        & .content-item-label {
+            width: 50%;
+            margin-right: 8px;
+        }
+    }
+
+    .content-scores-item {
+        & .content-infor-group {
+            width: auto;
+        }
+    }
+}
+
+//table 
+@media (min-width: 48em) and (max-width: 63.9375em) {
+    .content-container {
+        padding: 0 16px;
+    }
+
+    .content-full-item,
+    .content-container-item {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 16px;
+    }
+
+    .content-full-item {
+        row-gap: 10px;
+    }
+
+    .content-gioiTinhAndDanToc,
+    .content-name {
+        column-gap: 16px;
+    }
+
+    .content-infor {
+        margin-top: 10px;
+    }
+
+    .content-Fieldofstudy-item,
+    .content-score-option,
+    .content-scores {
+        & .content-item-label {
+            width: 25%;
+            margin-right: 16px;
+        }
+    }
+
+    .content-Fieldofstudy-item {
+        & .content-item-label {
+            margin-right: 64px;
+        }
+    }
+
+    .modal-container-img {
+        width: calc((400px - 16px) * 16 / 9);
+        height: calc(400px - 16px);
+        aspect-ratio: 16 / 9;
+        animation: zoom 0.5s ease-in-out;
+    }
+}
+
+//mobile
+@media (max-width:47.9375em) {
+    .header {
+        flex-direction: column;
+    }
+
+    .header-title,
+    .header-logo {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .title {
+        & .title-text {
+            font-size: 24px;
+        }
+
+        & .close {
+            top: 16px;
+            right: 16px;
+        }
+    }
+
+
+    .content-container {
+        padding: 0 10px;
+    }
+
+    .content-container-item {
+        grid-template-columns: 1fr;
+        margin-top: 16px;
+    }
+
+    .content-gioiTinhAndDanToc,
+    .content-name {
+        grid-template-columns: 1fr;
+        column-gap: 6px
+    }
+
+    .content-infor {
+        margin-top: 6px;
+    }
+
+    .content-full-item {
+        grid-template-columns: 1fr;
+        column-gap: 6px;
+        row-gap: 6px;
+    }
+
+    .content-score-option-item {
+        & .content-infor-group {
+            align-items: start;
+            flex-direction: column;
+
+            & .content-item-label {
+                margin-bottom: 8px;
+            }
+
+            & select.content-item-input {
+                width: calc(50vw - 16px);
+
+                &~.content-item-input {
+                    margin-left: 12px;
+                }
+            }
+        }
+    }
+
+    .content-Fieldofstudy-item {
+        align-items: start;
+        flex-direction: column;
+
+        & select.content-item-input {
+            width: 100%;
+            margin-top: 8px;
+        }
+    }
+
+
+    .content-images-item {
+        width: calc(70px * 16 / 9);
+        height: 70px;
+    }
+
+    .content-note {
+        margin-top: 8px;
+        margin-bottom: 8px;
+        text-align: justify;
+        padding: 0;
+    }
+
+    .modal-container-img {
+        width: calc((200px - 16px) * 16 / 9);
+        height: calc(200px - 16px);
+        aspect-ratio: 16 / 9;
+        animation: zoom 0.5s ease-in-out;
+    }
+}
+
+
+//Mobile small
+@media (min-width: 40em) {
+    .container {
+        width: 100%;
+    }
+}

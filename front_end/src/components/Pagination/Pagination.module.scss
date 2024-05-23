@@ -1,0 +1,25 @@
+.btn-pagination {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #7B88A8;
+    background: var(--white-color);
+    max-width: 60px;
+    width: 60px;
+    height: 32px;
+    margin: 0 4px;
+
+    &~.btn-pagination {
+        margin-left: 4px;
+    }
+
+    &:hover {
+        text-decoration: none;
+        background: var(--primary-color);
+    }
+
+    &.active {
+        background: var(--primary-color);
+        color: var(--white-color);
+    }
+}

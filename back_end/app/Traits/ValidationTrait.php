@@ -1,0 +1,88 @@
+<?php
+
+namespace App\Traits;
+
+use Illuminate\Http\Request;
+
+trait ValidationTrait
+{
+    private function validateHoSo(Request $request, $id = null)
+    {
+        return $request->validate([
+            'HoDem' => 'required|string|max:255',
+            'Ten' => 'required|string|max:255',
+            'NgayThangNamSinh' => 'required|date_format:Y-m-d|after:1900-01-01',
+            'GioiTinh' => 'required|in:Nam,Nữ',
+            'DanToc' => 'required|string|max:50',
+            'CCCD' => 'required|numeric|regex:/^[0-9]{12}$/|unique:tb_hoso,CCCD,' .$id. '',
+            'Email' => 'required|email|unique:tb_hoso,Email,' .$id. '',
+            'SDT' => 'required|regex:/^0[1-9][0-9]{8,9}$/|unique:tb_hoso,SDT,' .$id.'',
+            'MaTinh' => 'required|string|max:11',
+            'MaPhuongXa' => 'required|string|max:11',
+            'MaQuanHuyen' => 'required|string|max:11',
+            'MaTinhTruong' => 'required|string|max:11',
+            'MaQuanHuyenTruong' => 'required|string|max:11',
+            'TenTruong' => 'required|string|max:255',
+            'DiaChi' => 'required|string|max:255',
+            'DoiTuongUT' => 'nullable|string|max:11',
+            'KhuVucUT' => 'required|string|max:11',
+            'NamTotNghiep'  => 'required|numeric|after_or_equal:' . (date('Y') - 10),
+            'HinhThuc' => 'required|string|max:255',
+            'DiemTB10' => 'required|numeric|between:0,10',
+            'DiemTB11' => 'required|numeric|between:0,10',
+            'DiemHKI12' => 'required|numeric|between:0,10',
+            'Nganh_ID' => 'required|numeric',
+            'TrangThai' => 'nullable|in:1,0',
+            'BangKQ12.*' => 'nullable|file|mimes:jpeg,png,jpg,gif|max:5120',
+            'HocBaBia' => 'nullable|file|mimes:jpeg,png,jpg,gif|max:5120',
+            'ChungNhanTN' => 'nullable|file|mimes:jpeg,png,jpg,gif|max:5120',
+            'ChungNhanUT' => 'nullable|file|mimes:jpeg,png,jpg,gif|max:5120',
+        ], [
+            'unique' => ':attribute đã được đăng ký',
+            'CCCD.regex' => ':attribute chưa chính xác! (12 chữ số)',
+            'required' => 'Yêu cầu bắt buộc!',
+            'string' => ':attribute không hợp lệ!',
+            'max' => ':attribute vượt quá giới hạn',
+            'min' => ':attribute thấp hơn giới hạn',
+            'date_format' => ':attribute không hợp lệ!',
+            'in' => ':attribute không thuộc giá trị trên',
+            'numeric' => ':attribute phải là chữ số',
+            'after_or_equal' => ':attribute nằm ngoài khoảng cho phép!',
+            'email' => ':attribute không hợp lệ!',
+            'SDT.regex' => ':attribute không hợp lệ!',
+            'between' => ':attribute trong khoảng từ 0-10',
+            'after' => ':attribute phải sau ngày 1 tháng 1 năm 1900.',
+            'file' => ':attribute phải là hình ảnh.',
+            'mimes' => ':attribute phải là định dạng jpeg, png, jpg, hoặc gif.',
+        ], [
+            'HoDem' => 'Họ đệm',
+            'Ten' => 'Tên',
+            'NgayThangNamSinh' => 'Ngày tháng năm sinh',
+            'GioiTinh' => 'Giới tính',
+            'DanToc' => 'Dân tộc',
+            'CCCD' => 'CCCD',
+            'Email' => 'Email',
+            'SDT' => 'Số điện thoại',
+            'MaTinh' => 'Mã tỉnh',
+            'MaQuanHuyen' => 'Mã quận huyện',
+            'MaTinhTruong' => 'Mã tỉnh trường',
+            'MaQuanHuyenTruong' => 'Mã quận huyện trường',
+            'TenTruong' => 'Tên trường',
+            'MaPhuongXa' => 'Mã phường xã',
+            'DiaChi' => 'Địa chỉ',
+            'DoiTuongUT' => 'Đối tượng ưu tiên',
+            'KhuVucUT' => 'Khu vực ưu tiên',
+            'NamTotNghiep'  => 'Năm tốt nghiệp',
+            'HinhThuc' => 'Hình thức',
+            'DiemTB10' => 'Điểm TB lớp 10',
+            'DiemTB11' => 'Điểm TB lớp 11',
+            'DiemKHI12' => 'Điểm TB HKI lớp 12',
+            'Nganh_ID' => 'Ngành ID',
+            'TrangThai' => 'Trạng thái',
+            'BangKQ12' => 'Bảng kết quả 12',
+            'HocBaBia' => 'Học bạ bìa',
+            'ChungNhanTN' => 'Chứng nhận tốt nghiệp',
+            'ChungNhanUT' => 'Chứng nhận ưu tiên',
+        ]);
+    }
+}

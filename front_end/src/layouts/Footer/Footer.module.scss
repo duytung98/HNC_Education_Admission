@@ -1,0 +1,18 @@
+.footer {
+    margin-top: 40px;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.footer-developer,
+.footer-brand {
+    font-size: 20px;
+    text-align: center;
+    color: #ccc;
+}
+
+.footer-developer {
+    margin-top: 8px;
+    font-size: 18px;
+}

@@ -1,0 +1,62 @@
+.table-link:hover {
+    color: #2E55DF;
+    text-decoration: underline;
+    background-color: transparent;
+}
+
+.btn-edit,
+.btn-delete {
+    width: 60px;
+    border-radius: 2px;
+    height: 32px;
+    color: #fff;
+}
+
+.btn-edit {
+    background: #2E55DF;
+
+    &:hover {
+        background-color: #4265e2;
+    }
+}
+
+
+.btn-delete {
+    background-color: #ff0000;
+
+    &:hover {
+        background-color: #f23d3d;
+    }
+}
+
+.table-col.status {
+    color: #1FD051;
+    margin-left: 50%;
+
+    &.status-warning {
+        color: #ffc107;
+        font-weight: 500;
+    }
+
+    &.status-error {
+        color: red;
+        font-weight: 500;
+    }
+}
+
+.table>tbody>tr>td {
+    padding: 6px;
+    height: 48.8px;
+    font-size: 15px;
+}
+
+.table>thead>tr>th,
+.table>tbody>tr>td:last-child {
+    text-wrap: nowrap;
+}
+
+@media (min-width: 1700px) {
+    .table>tbody>tr>td {
+        font-size: 16px;
+    }
+}

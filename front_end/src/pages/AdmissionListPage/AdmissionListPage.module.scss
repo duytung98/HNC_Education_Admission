@@ -1,0 +1,138 @@
+.admissionList-title-text {
+    color: #052988;
+}
+
+.addmissionList-content {
+    margin: 0 20px;
+}
+
+.btn-edit,
+.btn-delete {
+    width: 60px;
+    border-radius: 2px;
+    height: 32px;
+    color: #fff;
+}
+
+.btn-edit {
+    background: #2e55df;
+
+    &:hover {
+        background-color: #4265e2;
+    }
+}
+
+.btn-delete {
+    background-color: #ff0000;
+
+    &:hover {
+        background-color: #f23d3d;
+    }
+}
+
+.admissionList-function {
+    background: rgba(204, 204, 204, 0.3);
+}
+
+.admissionList-function-search {
+    height: 42px;
+    border: 1px solid #dddd;
+    margin-left: 8px;
+    background-color: var(--white-color);
+    width: 300px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.input-search {
+    border: none;
+    outline: none;
+    padding-left: 8px;
+    border-left: 1px solid #dddd;
+}
+
+.function-export {
+    min-width: 120px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    border: 1px solid #dddd;
+    background-color: #fff;
+    margin-left: 8px;
+    padding: 8px;
+    cursor: pointer;
+    position: relative;
+
+    &:hover {
+        border-color: var(--primary-color);
+    }
+}
+
+.function-export-item {
+    display: flex;
+    align-items: center;
+}
+
+.function-export-list {
+    display: none;
+    position: absolute;
+    top: calc(100% + 1px);
+    right: 0;
+    left: 0;
+    z-index: 99;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    background: var(--white-color);
+}
+
+.function-export-list>.function-export-item {
+    padding: 8px;
+    margin-top: 4px;
+
+    &:hover {
+        color: var(--white-color);
+        background: var(--primary-color);
+    }
+}
+
+.function-export-item.current {
+    margin-right: 8px;
+
+    &:hover {
+        color: var(--primary-color);
+    }
+}
+
+.function-export:hover>.function-export-list {
+    display: block;
+}
+
+.function-export-list>.function-export-item:first-child {
+    margin-top: 0;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.function-export-list>.function-export-item:last-child {
+    margin-top: 0;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.function-export-icon {
+    margin-right: 8px;
+}
+
+.form-editInfor,
+.form-detail {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+    background: rgb(0, 0, 0, 0.25);
+}

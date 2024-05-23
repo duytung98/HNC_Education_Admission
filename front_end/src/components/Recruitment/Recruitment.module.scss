@@ -1,0 +1,191 @@
+// modal
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 10px 0 10px;
+
+    .modal__container {
+        background-color: rgb(255, 255, 255);
+        width: 800px;
+        height: 168px;
+        border-radius: 1.25rem;
+        border: 3px solid #128080;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px -4px 16px 0px,
+            rgba(0, 0, 0, 0.1) 0px 8px 16px 0px;
+        animation: Showlogin ease 0.5s;
+        position: relative;
+    }
+
+    .container__close {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        width: 32px;
+        height: 32px;
+        font-size: 1.6rem;
+        color: #333;
+        background: #ccc;
+        border-radius: 50%;
+        padding: 0.2rem;
+        cursor: pointer;
+    }
+
+    .container__close:hover {
+        color: red;
+    }
+
+    .container__title {
+        text-align: center;
+        padding: 10px 20px;
+
+        .container__title_text {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #128080;
+        }
+    }
+}
+
+
+// // tablet
+@media screen and (min-width: 48em) and (max-width: 64em) {
+    .modal__container {
+        height: 168px !important;
+        width: 600px !important;
+        margin: 0 8px;
+    }
+}
+
+// desktop
+@media screen and (min-width: 64em) {
+    .modal__container {
+        height: 162px !important;
+        margin: 0 8px;
+    }
+}
+
+// table
+table.recruitment-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgb(255, 255, 255);
+}
+
+tr.recruitment-tr:nth-of-type(odd) {
+    background: #fff;
+}
+
+th.recruiment-th {
+    background: #128080;
+    color: white;
+    font-weight: bold;
+}
+
+td.recruiment-td,
+th.recruiment-th {
+    padding: 6px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.table__status {
+    font-weight: 600;
+}
+
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px) {
+    .modal__container {
+        height: 270px !important;
+    }
+
+    /* Force table to not be like tables anymore */
+    table.recruiment-table,
+    thead.recruiment-thead,
+    tbody.recruiment-tbody,
+    th.recruiment-th,
+    td.recruiment-td,
+    tr.recruiment-tr {
+        display: block;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead.recruiment-thead tr.recruiment-tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr.recruiment-tr {
+        border: 1px solid #ccc;
+    }
+
+    td.recruiment-td {
+        /* Behave  like a "row" */
+        border: none;
+        border: 1px solid #c3c1c1;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    td.recruiment-td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+    }
+
+    td.recruiment-td,
+    th.recruiment-th {
+        text-align: center;
+    }
+
+    /*
+      Label the data
+      */
+    td.recruiment-td:nth-of-type(1):before {
+        content: "Mã hồ sơ";
+    }
+
+    td.recruiment-td:nth-of-type(2):before {
+        content: "Họ và tên";
+    }
+
+    td.recruiment-td:nth-of-type(3):before {
+        content: "Ngày sinh";
+    }
+
+    td.recruiment-td:nth-of-type(4):before {
+        content: "Số điện thoại";
+    }
+
+    td.recruiment-td:nth-of-type(5):before {
+        content: "Trạng thái";
+    }
+}
+
+// mobile and table;
+@media (max-width: 64em) {
+    tr.recruiment-tr {
+        padding: 0 20px;
+    }
+
+    td.recruiment-td {
+        text-align: left;
+        border: none;
+        text-wrap: nowrap;
+    }
+}

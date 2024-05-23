@@ -1,0 +1,1 @@
+export { default as AdmissionListPage } from './AdmissionListPage';
