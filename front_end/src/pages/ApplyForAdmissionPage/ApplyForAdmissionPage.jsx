@@ -13,9 +13,15 @@ import { ArrowUp, UploadIcon } from "~/components/Icon";
 import styles from "./ApplyForAdmissionPage.module.scss";
 
 import {
-  getNationListService, getCityListService, getMajorListService, getDistrictListService,
-  getCommunelistService, getCityListOfSchoolService, getDistrictListOfSchoolService,
-  getSchoollistService, registerProfile,
+  getNationListService,
+  getCityListService,
+  getMajorListService,
+  getDistrictListService,
+  getCommunelistService,
+  getCityListOfSchoolService,
+  getDistrictListOfSchoolService,
+  getSchoollistService,
+  registerProfile,
 } from "~/services";
 
 import { createRoot } from "react-dom/client";
@@ -40,11 +46,11 @@ function ApplyForAdmissionPage() {
   const [communelist, setCommunelist] = useState([]);
   const [schoolList, setSchoolList] = useState([]);
 
-  const [maTinh, setMaTinh] = useState('');
-  const [maHuyen, setMaHuyen] = useState('');
-  const [maXa, setMaXa] = useState('');
-  const [maTinhTHPT, setMaTinhTHPT] = useState('');
-  const [MaHuyenTHPT, setMaHuyenTHPT] = useState('');
+  const [maTinh, setMaTinh] = useState("");
+  const [maHuyen, setMaHuyen] = useState("");
+  const [maXa, setMaXa] = useState("");
+  const [maTinhTHPT, setMaTinhTHPT] = useState("");
+  const [MaHuyenTHPT, setMaHuyenTHPT] = useState("");
   const [TruongTHPT, setTruongTHPT] = useState(null);
 
   const [errors, setErrors] = useState(null);
@@ -82,7 +88,7 @@ function ApplyForAdmissionPage() {
         const data = await getNationListService();
         setNationList(data);
       } catch (e) {
-        navigate('/500-ServerError');
+        navigate("/500-ServerError");
       }
     };
     getNationList();
@@ -96,12 +102,12 @@ function ApplyForAdmissionPage() {
         const dataFormated = data.map((item) => {
           return {
             value: item?.ma,
-            label: item?.tenDonVi
-          }
-        })
+            label: item?.tenDonVi,
+          };
+        });
         setCityList(dataFormated);
       } catch (e) {
-        navigate('/500-ServerError');
+        navigate("/500-ServerError");
       }
     };
     getCityList();
@@ -115,12 +121,12 @@ function ApplyForAdmissionPage() {
         const dataFormated = data.map((item) => {
           return {
             value: item?.ma,
-            label: item?.tenDonVi
-          }
-        })
+            label: item?.tenDonVi,
+          };
+        });
         setDistrictList(dataFormated);
       } catch (e) {
-        navigate('/500-ServerError');
+        navigate("/500-ServerError");
       }
     };
     getDistrictList();
@@ -134,12 +140,12 @@ function ApplyForAdmissionPage() {
         const dataFormated = data.map((item) => {
           return {
             value: item?.ma,
-            label: item?.tenDonVi
-          }
-        })
+            label: item?.tenDonVi,
+          };
+        });
         setCommunelist(dataFormated);
       } catch (e) {
-        navigate('/500-ServerError');
+        navigate("/500-ServerError");
       }
     };
     getCommunelist();
@@ -153,12 +159,12 @@ function ApplyForAdmissionPage() {
         const dataFormated = data.map((item) => {
           return {
             value: item?.maTinh,
-            label: item?.tenTinhTP
-          }
-        })
+            label: item?.tenTinhTP,
+          };
+        });
         setCitysOfSchool(dataFormated);
       } catch (e) {
-        navigate('/500-ServerError');
+        navigate("/500-ServerError");
       }
     };
     getCityList();
@@ -172,12 +178,12 @@ function ApplyForAdmissionPage() {
         const dataFormated = data.map((item) => {
           return {
             value: item?.maQH,
-            label: item?.tenQH
-          }
-        })
+            label: item?.tenQH,
+          };
+        });
         setDistrictsOfSchool(dataFormated);
       } catch (e) {
-        navigate('/500-ServerError');
+        navigate("/500-ServerError");
       }
     };
     getDistrictList();
@@ -187,20 +193,21 @@ function ApplyForAdmissionPage() {
   useEffect(() => {
     const getSchoolList = async () => {
       try {
-        const data = (await getSchoollistService(maTinhTHPT, MaHuyenTHPT)) || [];
+        const data =
+          (await getSchoollistService(maTinhTHPT, MaHuyenTHPT)) || [];
         const dataFormated = data.map((item) => {
           return {
             value: JSON.stringify({
               ma: item?.ma,
               TenTruong: item?.tenTruong,
-              khuVucUT: item?.khuVuc
+              khuVucUT: item?.khuVuc,
             }),
-            label: item?.tenTruong
-          }
-        })
+            label: item?.tenTruong,
+          };
+        });
         setSchoolList(dataFormated);
       } catch (e) {
-        navigate('/500-ServerError');
+        navigate("/500-ServerError");
       }
     };
     getSchoolList();
@@ -210,11 +217,10 @@ function ApplyForAdmissionPage() {
   useEffect(() => {
     const getMajorLis = async () => {
       try {
-
         const data = await getMajorListService();
         setMajors(data);
       } catch (e) {
-        navigate('/500-ServerError');
+        navigate("/500-ServerError");
       }
     };
     getMajorLis();
@@ -227,15 +233,15 @@ function ApplyForAdmissionPage() {
     });
 
     let date = formatDate(birthday);
-    let paths = date.split('/');
-    let NgayThangNamSinh = paths[2] + '-' + paths[1] + '-' + paths[0];
-    formData.append('NgayThangNamSinh', NgayThangNamSinh);
-    formData.append('KhuVucUT', TruongTHPT?.khuVucUT);
+    let paths = date.split("/");
+    let NgayThangNamSinh = paths[2] + "-" + paths[1] + "-" + paths[0];
+    formData.append("NgayThangNamSinh", NgayThangNamSinh);
+    formData.append("KhuVucUT", TruongTHPT?.khuVucUT);
 
     let HoDem = capitalizeTheFirstLetter(formik.values.HoDem);
     let Ten = capitalizeTheFirstLetter(formik.values.Ten);
-    formData.append('HoDem', HoDem);
-    formData.append('Ten', Ten);
+    formData.append("HoDem", HoDem);
+    formData.append("Ten", Ten);
 
     for (const image of BangKQ12) {
       formData.append("BangKQ12[]", image);
@@ -262,8 +268,8 @@ function ApplyForAdmissionPage() {
         HocBaBia: res?.errors?.HocBaBia,
         ChungNhanTN: res?.errors?.ChungNhanTN,
         ChungNhanUT: res?.errors?.ChungNhanUT,
-        'BangKQ12.0': res?.errors?.['BangKQ12.0'],
-        'BangKQ12.1': res?.errors?.['BangKQ12.1'],
+        "BangKQ12.0": res?.errors?.["BangKQ12.0"],
+        "BangKQ12.1": res?.errors?.["BangKQ12.1"],
       });
       formik.errors.CCCD = res?.errors.CCCD;
       formik.errors.Email = res?.errors.Email;
@@ -294,12 +300,12 @@ function ApplyForAdmissionPage() {
       GioiTinh: "Nam",
       DanToc: "Kinh",
       SDT: "",
-      MaTinh: '',
-      MaQuanHuyen: '',
-      MaPhuongXa: '',
-      MaTinhTruong: '',
-      MaQuanHuyenTruong: '',
-      TenTruong: '',
+      MaTinh: "",
+      MaQuanHuyen: "",
+      MaPhuongXa: "",
+      MaTinhTruong: "",
+      MaQuanHuyenTruong: "",
+      TenTruong: "",
       NamTotNghiep: "",
       DoiTuongUT: "",
       HinhThuc: "",
@@ -314,22 +320,23 @@ function ApplyForAdmissionPage() {
       Nganh_ID: Yup.string().required("Vui lòng chọn thông tin!"),
       Ten: Yup.string().required("Vui lòng nhập thông tin!"),
       DiaChi: Yup.string().required("Vui lòng nhập thông tin!"),
-      CCCD: Yup.string().required('Vui lòng nhập thông tin!')
-        .matches(/^\d{12}$/, 'CCCD không hợp lệ!'),
+      CCCD: Yup.string()
+        .required("Vui lòng nhập thông tin!")
+        .matches(/^\d{12}$/, "CCCD không hợp lệ!"),
       Email: Yup.string()
         .required("Vui lòng nhập thông tin!")
         .email("Email không hợp lệ")
         .max(255, "Email quá dài!"),
       SDT: Yup.string()
-        .required('Vui lòng nhập thông tin!')
-        .matches(/^[0][0-9]{9}$/, 'Số điện thoại không hợp lệ!'),
-      MaTinh: Yup.string().required('Vui lòng chọn thông tin!'),
-      MaQuanHuyen: Yup.string().required('Vui lòng chọn thông tin!'),
-      MaPhuongXa: Yup.string().required('Vui lòng chọn thông tin!'),
-      MaTinhTruong: Yup.string().required('Vui lòng  chọn thông tin!'),
-      MaQuanHuyenTruong: Yup.string().required('Vui lòng chọn thông tin!'),
-      HinhThuc: Yup.string().required('Vui lòng chọn thông tin!'),
-      TenTruong: Yup.string().required('Vui lòng chọn thông tin!'),
+        .required("Vui lòng nhập thông tin!")
+        .matches(/^[0][0-9]{9}$/, "Số điện thoại không hợp lệ!"),
+      MaTinh: Yup.string().required("Vui lòng chọn thông tin!"),
+      MaQuanHuyen: Yup.string().required("Vui lòng chọn thông tin!"),
+      MaPhuongXa: Yup.string().required("Vui lòng chọn thông tin!"),
+      MaTinhTruong: Yup.string().required("Vui lòng  chọn thông tin!"),
+      MaQuanHuyenTruong: Yup.string().required("Vui lòng chọn thông tin!"),
+      HinhThuc: Yup.string().required("Vui lòng chọn thông tin!"),
+      TenTruong: Yup.string().required("Vui lòng chọn thông tin!"),
       DiemTB10: Yup.string().required("Vui lòng nhập điểm"),
       DiemTB11: Yup.string().required("Vui lòng nhập điểm"),
       DiemHKI12: Yup.string().required("Vui lòng nhập điểm"),
@@ -370,20 +377,20 @@ function ApplyForAdmissionPage() {
 
     switch (type) {
       case "BangKQ12":
-        errors && (errors['BangKQ12.0'] = '');
-        errors && (errors['BangKQ12.1'] = '');
+        errors && (errors["BangKQ12.0"] = "");
+        errors && (errors["BangKQ12.1"] = "");
         setBangKQ12(files);
         break;
       case "HocBaBia":
-        errors && (errors.HocBaBia = '');
+        errors && (errors.HocBaBia = "");
         setHocBaBia(files[0]);
         break;
       case "ChungNhanTN":
-        errors && (errors.ChungNhanTN = '');
+        errors && (errors.ChungNhanTN = "");
         setChungNhanTN(files[0]);
         break;
       case "ChungNhanUT":
-        errors && (errors.ChungNhanUT = '');
+        errors && (errors.ChungNhanUT = "");
         setChungNhanUT(files[0]);
         break;
       default:
@@ -442,8 +449,8 @@ function ApplyForAdmissionPage() {
   const handleShowNamTotNghiep = () => {
     const date = new Date();
     const currentYear = date.getFullYear();
-    return show10LastYear(formik.values.NamTotNghiep, currentYear)
-  }
+    return show10LastYear(formik.values.NamTotNghiep, currentYear);
+  };
 
   return (
     <React.Fragment>
@@ -473,7 +480,7 @@ function ApplyForAdmissionPage() {
           </div>
         </header>
         <main className={cx("content")}>
-          <form className={cx('form-applyAdmission')}>
+          <form className={cx("form-applyAdmission")}>
             <div className={cx("content-item")}>
               <div className={cx("content-item-title", "flex items-center")}>
                 <span className={cx("flex-1")}></span>
@@ -700,7 +707,12 @@ function ApplyForAdmissionPage() {
                     )}
                   </div>
                 </div>
-                <div className={cx("content-container-item", "content-full", "mt-6")}
+                <div
+                  className={cx(
+                    "content-container-item",
+                    "content-full",
+                    "mt-6"
+                  )}
                 >
                   <div className={cx("content-infor", "content-hometown")}>
                     <label htmlFor="Tinh" className={cx("content-item-label")}>
@@ -708,23 +720,27 @@ function ApplyForAdmissionPage() {
                       Hộ khẩu thường trú
                     </label>
                     <div className={cx("content-full-item")}>
-                      <div className={cx('content-howtel-tinh', 'content-input-select')}>
+                      <div
+                        className={cx(
+                          "content-howtel-tinh",
+                          "content-input-select"
+                        )}
+                      >
                         <Select
                           options={cityList}
-                          className={cx('content-item-input')}
-                          name='MaTinh'
+                          className={cx("content-item-input")}
+                          name="MaTinh"
                           initValue={maTinh}
                           onChange={(value) => {
-                            setMaHuyen('');
-                            setMaXa('');
+                            setMaHuyen("");
+                            setMaXa("");
                             formik.values.MaTinh = value;
-                            formik.values.MaQuanHuyen = '';
-                            formik.values.MaPhuongXa = '';
-                            if (value)
-                              formik.errors.MaTinh = '';
+                            formik.values.MaQuanHuyen = "";
+                            formik.values.MaPhuongXa = "";
+                            if (value) formik.errors.MaTinh = "";
                             setMaTinh(value);
                           }}
-                          placeholder='Chọn Tỉnh / Thành Phố'
+                          placeholder="Chọn Tỉnh / Thành Phố"
                         />
                         {formik.errors.MaTinh && formik.touched.MaTinh ? (
                           <p className={cx("message")}>
@@ -737,21 +753,23 @@ function ApplyForAdmissionPage() {
                       <div className={cx("content-howtel-huyen")}>
                         <Select
                           options={districtList}
-                          className={cx('content-item-input', 'content-input-select')}
-                          name='MaQuanHuyen'
+                          className={cx(
+                            "content-item-input",
+                            "content-input-select"
+                          )}
+                          name="MaQuanHuyen"
                           initValue={maHuyen}
                           onChange={(value) => {
-                            setMaXa('');
+                            setMaXa("");
                             formik.values.MaQuanHuyen = value;
-                            formik.values.MaPhuongXa = '';
-                            if (value)
-                              formik.errors.MaQuanHuyen = '';
+                            formik.values.MaPhuongXa = "";
+                            if (value) formik.errors.MaQuanHuyen = "";
                             setMaHuyen(value);
                           }}
-                          placeholder='Chọn Quận / Huyện'
+                          placeholder="Chọn Quận / Huyện"
                         />
                         {formik.errors.MaQuanHuyen &&
-                          formik.touched.MaQuanHuyen ? (
+                        formik.touched.MaQuanHuyen ? (
                           <p className={cx("message")}>
                             {formik.errors.MaQuanHuyen}
                           </p>
@@ -762,19 +780,21 @@ function ApplyForAdmissionPage() {
                       <div className={cx("content-howtel-xa")}>
                         <Select
                           options={communelist}
-                          className={cx('content-item-input', 'content-input-select')}
-                          name='MaPhuongXa'
+                          className={cx(
+                            "content-item-input",
+                            "content-input-select"
+                          )}
+                          name="MaPhuongXa"
                           initValue={maXa}
                           onChange={(value) => {
                             formik.values.MaPhuongXa = value;
-                            if (value)
-                              formik.errors.MaPhuongXa = '';
-                            setMaXa(value)
+                            if (value) formik.errors.MaPhuongXa = "";
+                            setMaXa(value);
                           }}
-                          placeholder='Chọn Xã / Phường'
+                          placeholder="Chọn Xã / Phường"
                         />
                         {formik.errors.MaPhuongXa &&
-                          formik.touched.MaPhuongXa ? (
+                        formik.touched.MaPhuongXa ? (
                           <p className={cx("message")}>
                             {formik.errors.MaPhuongXa}
                           </p>
@@ -830,24 +850,23 @@ function ApplyForAdmissionPage() {
                     </label>
                     <Select
                       options={citysOfSchool}
-                      className={cx('content-item-input')}
-                      name='MaTinhTruong'
+                      className={cx("content-item-input")}
+                      name="MaTinhTruong"
                       initValue={maTinhTHPT}
                       onChange={(value) => {
                         formik.values.MaTinhTruong = value;
-                        formik.values.MaQuanHuyenTruong = '';
-                        formik.values.TenTruong = '';
-                        if (value)
-                          formik.errors.MaTinhTruong = '';
-                        setMaHuyenTHPT('');
+                        formik.values.MaQuanHuyenTruong = "";
+                        formik.values.TenTruong = "";
+                        if (value) formik.errors.MaTinhTruong = "";
+                        setMaHuyenTHPT("");
                         setTruongTHPT(null);
                         setMaTinhTHPT(value);
                       }}
-                      placeholder='Chọn Tỉnh / Thành Phố'
+                      placeholder="Chọn Tỉnh / Thành Phố"
                     />
 
                     {formik.errors.MaTinhTruong &&
-                      formik.touched.MaTinhTruong ? (
+                    formik.touched.MaTinhTruong ? (
                       <p className={cx("message")}>
                         {formik.errors.MaTinhTruong}
                       </p>
@@ -865,26 +884,31 @@ function ApplyForAdmissionPage() {
                     </label>
                     <Select
                       options={districtsOfSchool}
-                      className={cx('content-item-input', 'content-input-select')}
-                      name='MaQuanHuyenTruong'
+                      className={cx(
+                        "content-item-input",
+                        "content-input-select"
+                      )}
+                      name="MaQuanHuyenTruong"
                       initValue={MaHuyenTHPT}
                       onChange={(value) => {
                         formik.values.MaQuanHuyenTruong = value;
-                        formik.values.TenTruong = '';
-                        if (value)
-                          formik.errors.MaQuanHuyenTruong = '';
+                        formik.values.TenTruong = "";
+                        if (value) formik.errors.MaQuanHuyenTruong = "";
                         setTruongTHPT(null);
                         setMaHuyenTHPT(value);
                       }}
-                      placeholder='Chọn Quận / Huyện'
+                      placeholder="Chọn Quận / Huyện"
                     />
-                    {(formik.errors?.MaQuanHuyenTruong && formik.touched.MaQuanHuyenTruong) ||
-                      errors?.MaQuanHuyenTruong ?
-                      <p className={cx('message')}>
-                        {formik.errors?.MaQuanHuyenTruong || errors?.MaQuanHuyenTruong}
-                      </p> :
-                      <p className={cx('message')}> </p>
-                    }
+                    {(formik.errors?.MaQuanHuyenTruong &&
+                      formik.touched.MaQuanHuyenTruong) ||
+                    errors?.MaQuanHuyenTruong ? (
+                      <p className={cx("message")}>
+                        {formik.errors?.MaQuanHuyenTruong ||
+                          errors?.MaQuanHuyenTruong}
+                      </p>
+                    ) : (
+                      <p className={cx("message")}> </p>
+                    )}
                   </div>
                   <div className={cx("content-infor")}>
                     <label
@@ -896,19 +920,18 @@ function ApplyForAdmissionPage() {
                     </label>
                     <Select
                       options={schoolList}
-                      className={cx('content-item-input')}
-                      name='TenTruong'
+                      className={cx("content-item-input")}
+                      name="TenTruong"
                       initValue={JSON.stringify(null)}
                       onChange={(value) => {
-                        let valueFormated = value
-                          ? JSON.parse(value)
-                          : null;
-                        formik.values.TenTruong = valueFormated?.TenTruong ? valueFormated?.TenTruong : '';
-                        if (valueFormated)
-                          formik.errors.TenTruong = '';
+                        let valueFormated = value ? JSON.parse(value) : null;
+                        formik.values.TenTruong = valueFormated?.TenTruong
+                          ? valueFormated?.TenTruong
+                          : "";
+                        if (valueFormated) formik.errors.TenTruong = "";
                         setTruongTHPT(valueFormated);
                       }}
-                      placeholder='Chọn Trường THPT'
+                      placeholder="Chọn Trường THPT"
                     />
                     {formik.errors.TenTruong && formik.touched.TenTruong ? (
                       <p className={cx("message")}>{formik.errors.TenTruong}</p>
@@ -1028,7 +1051,7 @@ function ApplyForAdmissionPage() {
                       {handleShowNamTotNghiep()}
                     </select>
                     {formik.errors.NamTotNghiep &&
-                      formik.touched.NamTotNghiep ? (
+                    formik.touched.NamTotNghiep ? (
                       <p className={cx("message")}>
                         {formik.errors.NamTotNghiep}
                       </p>
@@ -1037,7 +1060,12 @@ function ApplyForAdmissionPage() {
                     )}
                   </div>
                 </div>
-                <div className={cx("content-container-item", "content-full", "mt-6")}
+                <div
+                  className={cx(
+                    "content-container-item",
+                    "content-full",
+                    "mt-6"
+                  )}
                 >
                   <div className={cx("content-infor", "content-hinhthuc")}>
                     <label
@@ -1066,8 +1094,7 @@ function ApplyForAdmissionPage() {
                           Xét tuyển bằng học bạ THPT
                         </option>
                       </select>
-                      {formik.errors.HinhThuc &&
-                        formik.touched.HinhThuc ? (
+                      {formik.errors.HinhThuc && formik.touched.HinhThuc ? (
                         <p className={cx("message")}>
                           {formik.errors.HinhThuc}
                         </p>
@@ -1230,9 +1257,7 @@ function ApplyForAdmissionPage() {
                       </select>
                     </div>
                     {formik.errors.Nganh_ID && formik.touched.Nganh_ID ? (
-                      <p className={cx("message")}>
-                        {formik.errors.Nganh_ID}
-                      </p>
+                      <p className={cx("message")}>{formik.errors.Nganh_ID}</p>
                     ) : (
                       <p className={cx("message")}> </p>
                     )}
@@ -1296,9 +1321,9 @@ function ApplyForAdmissionPage() {
                             onChange={handleUploadImages}
                             multiple
                           />
-                          {errors?.['BangKQ12.0'] || errors?.['BangKQ12.1'] ? (
+                          {errors?.["BangKQ12.0"] || errors?.["BangKQ12.1"] ? (
                             <p className={cx("message")}>
-                              {errors?.['BangKQ12.0'] || errors?.['BangKQ12.1']}
+                              {errors?.["BangKQ12.0"] || errors?.["BangKQ12.1"]}
                             </p>
                           ) : (
                             <p className={cx("message")}> </p>
@@ -1454,7 +1479,10 @@ function ApplyForAdmissionPage() {
                   e.preventDefault();
                   e.stopPropagation();
                   Object.keys(formik.values).forEach((key) => {
-                    if ((key !== 'DoiTuongUT' && !formik.values[key]) || formik.errors?.[key]) {
+                    if (
+                      (key !== "DoiTuongUT" && !formik.values[key]) ||
+                      formik.errors?.[key]
+                    ) {
                       setShowToastSignUp(true);
                       setTimeout(() => {
                         setShowToastSignUp(false);
@@ -1478,7 +1506,7 @@ function ApplyForAdmissionPage() {
           }}
           onAccepted={() => {
             setExit(false);
-            navigate('/');
+            navigate("/");
           }}
         />
 
@@ -1497,22 +1525,24 @@ function ApplyForAdmissionPage() {
           </button>
         )}
 
-        {
-          modalImgSrc && (
-            <div ref={modalContainerRef} className={cx('modal')}>
-              <div className={cx('modal-container')}>
-                <div className={cx('modal-container-img')}>
-                  <img className={cx('modal-img')} src={modalImgSrc} alt="img ảnh" />
-                </div>
-                <div className={cx('btn')}>
-                  <button className={cx('btn-close')} onClick={closeModal}>
-                    &times;
-                  </button>
-                </div>
+        {modalImgSrc && (
+          <div ref={modalContainerRef} className={cx("modal")}>
+            <div className={cx("modal-container")}>
+              <div className={cx("modal-container-img")}>
+                <img
+                  className={cx("modal-img")}
+                  src={modalImgSrc}
+                  alt="img ảnh"
+                />
+              </div>
+              <div className={cx("btn")}>
+                <button className={cx("btn-close")} onClick={closeModal}>
+                  &times;
+                </button>
               </div>
             </div>
-          )
-        }
+          </div>
+        )}
       </div>
 
       {/* toast messenger */}
@@ -1533,7 +1563,6 @@ function ApplyForAdmissionPage() {
           }}
         />
       )}
-
     </React.Fragment>
   );
 }
