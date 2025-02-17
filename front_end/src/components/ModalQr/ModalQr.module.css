@@ -1,0 +1,256 @@
+@charset "UTF-8";
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal .modal__container {
+  background-color: rgb(255, 255, 255);
+  width: 600px;
+  height: 280px;
+  border-radius: 1.25rem;
+  border: 4px solid #128080;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px -4px 16px 0px, rgba(0, 0, 0, 0.1) 0px 8px 16px 0px;
+  animation: Showlogin ease 0.5s;
+  position: relative;
+}
+.modal .container__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 32px;
+  height: 32px;
+  font-size: 1.6rem;
+  color: #333;
+  background: #ccc;
+  border-radius: 50%;
+  padding: 0.2rem;
+  cursor: pointer;
+}
+.modal .container__close:hover {
+  color: red;
+}
+.modal .container__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 10px 20px;
+}
+.modal .container__title .container__img {
+  width: 10%;
+  height: auto;
+}
+.modal .container__title .container__title_text {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #5e5e5e;
+  text-align: left;
+}
+.modal .container__title .right__text {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+}
+.modal .container__title .right__text .container__title_text1 {
+  font-size: 12px;
+  font-weight: 500;
+  color: #5e5e5e;
+}
+.modal .container__text {
+  margin-bottom: 0.8rem;
+}
+.modal .container__img {
+  text-align: center;
+}
+.modal .img__thanhtoan {
+  width: 30%;
+  height: auto;
+  margin-bottom: 10px;
+}
+.modal .container__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  background: #128080;
+  width: 180px;
+  padding: 10px 20px;
+  border-radius: 0.6rem;
+  margin: 0 auto;
+  gap: 0.6rem;
+  color: #fff;
+}
+
+.title__chucmung {
+  text-align: center;
+}
+.title__chucmung .text {
+  width: 100%;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  color: #128080;
+}
+
+.title__thanhtoan {
+  margin-top: 12px;
+}
+.title__thanhtoan .thanhtoan__lephi {
+  color: #128080;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 6px;
+}
+
+.list__nganhang {
+  padding: 10px 20px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.list__nganhang .nganhang__nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.list__nganhang .nganhang__item {
+  padding: 2px;
+  display: flex;
+  gap: 0.3rem;
+  color: #128080;
+  font-size: 0.9rem;
+}
+.list__nganhang .item__span {
+  font-weight: 600;
+  color: #128080;
+}
+
+.text__footer .container__text {
+  color: #128080;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+/* Căn chỉnh QR và logo nếu có */
+.logo,
+.qr-code {
+  display: block;
+  margin: 10px auto;
+  width: 100px; /* Adjust size accordingly */
+}
+
+@media screen and (max-width: 480px) {
+  .modal__container {
+    margin: 0 8px;
+    height: 470px !important;
+  }
+  .text {
+    font-size: 12px !important;
+  }
+  .nganhang__item {
+    font-size: 0.8rem !important;
+  }
+  .container__text {
+    font-size: 1rem !important;
+    padding: 0 10px !important;
+  }
+  .list__nganhang {
+    padding: 12px 20px;
+  }
+  .thanhtoan__lephi {
+    font-size: 10px !important;
+  }
+  .img__thanhtoan {
+    margin-bottom: 2px !important;
+  }
+  .container__btn {
+    padding: 6px 15px !important;
+  }
+  .nganhang__item {
+    font-size: 10px !important;
+  }
+  .container__text {
+    font-size: 12px !important;
+    text-align: center;
+    padding: 0 10px !important;
+  }
+}
+@media screen and (min-width: 490px) and (max-width: 600px) {
+  .modal__container {
+    margin: 0 8px;
+    height: 630px !important;
+  }
+  .container__text {
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 0.8rem;
+  }
+  .container__text {
+    margin-bottom: 2rem;
+  }
+  .container__title_text {
+    margin-top: 0.4em;
+  }
+  .thanhtoan__lephi {
+    font-size: 0.8rem !important;
+  }
+  .nganhang__item {
+    font-size: 0.8rem !important;
+  }
+  .container__text {
+    font-size: 1rem !important;
+    padding: 0 10px !important;
+  }
+  .list__nganhang {
+    padding: 12px 20px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .modal__container {
+    margin: 0 8px;
+    width: 580px;
+    height: 660px !important;
+  }
+  .container__text {
+    font-size: 20px;
+    text-align: center;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .modal__container {
+    height: 680px !important;
+    text-align: center;
+  }
+  .modal__container {
+    width: 652px !important;
+    margin: 0 8px;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1114px) {
+  .modal__container {
+    height: 630px !important;
+    text-align: center;
+  }
+  .img__thanhtoan {
+    width: 24% !important;
+  }
+  .container__text {
+    font-size: 0.8rem !important;
+    text-align: center;
+  }
+  .nganhang__item {
+    font-size: 0.8rem !important;
+  }
+}/*# sourceMappingURL=ModalQr.module.css.map */

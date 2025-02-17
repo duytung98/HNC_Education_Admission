@@ -70,7 +70,7 @@
       align-items: start;
       flex-direction: column;
       .container__title_text1 {
-        font-size: 9px;
+        font-size: 12px;
         font-weight: 500;
         color: #5e5e5e;
       }
@@ -89,7 +89,7 @@
   // }
 
   .img__thanhtoan {
-    width: 40%;
+    width: 30%;
     height: auto;
     margin-bottom: 10px;
   }
@@ -100,7 +100,7 @@
     justify-content: center;
     margin-top: 20px;
     background: #128080;
-    width: 200px;
+    width: 180px;
     padding: 10px 20px;
     border-radius: 0.6rem;
     margin: 0 auto;
@@ -124,7 +124,7 @@
   margin-top: 12px;
   .thanhtoan__lephi {
     color: #128080;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 400;
     margin-bottom: 6px;
   }
@@ -145,7 +145,7 @@
     display: flex;
     gap: 0.3rem;
     color: #128080;
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   .item__span {
@@ -157,7 +157,7 @@
 .text__footer {
   .container__text {
     color: #128080;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 500;
     margin-bottom: 10px;
   }
@@ -175,7 +175,7 @@
 @media screen and (max-width: 480px) {
   .modal__container {
     margin: 0 8px;
-    height: 528px !important;
+    height: 470px !important;
   }
   .text {
     font-size: 12px !important;
@@ -202,7 +202,7 @@
   }
 
   .container__btn {
-    padding: 6px 16px !important;
+    padding: 6px 15px !important;
   }
 
   .nganhang__item {
@@ -259,7 +259,7 @@
   .modal__container {
     margin: 0 8px;
     width: 580px;
-    height: 774px !important;
+    height: 660px !important;
   }
 
   .container__text {
@@ -272,7 +272,7 @@
 @media screen and (min-width: 1024px) {
   .modal__container {
     // height: 510px !important;
-    height: 777px !important;
+    height: 680px !important;
     text-align: center;
   }
 

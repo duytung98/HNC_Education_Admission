@@ -1,0 +1,31 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
+}
+.wrapper .report_major {
+  width: 100% !important;
+  height: 400px !important;
+  max-width: 800px !important;
+}
+.wrapper .bar-chart {
+  width: 100% !important;
+  height: 100% !important;
+}
+.wrapper .year {
+  position: absolute;
+  border: 1px solid #ccc;
+  right: 70px;
+  top: -30px;
+}
+.wrapper .title-report {
+  margin-top: 20px;
+  color: #052A88;
+  font-size: 20px;
+  font-weight: 700;
+}
+.wrapper .wrapper-content {
+  position: relative;
+  text-align: center;
+}/*# sourceMappingURL=ReportYears.module.css.map */

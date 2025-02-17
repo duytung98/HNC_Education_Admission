@@ -27,7 +27,7 @@ function ModalQr({ maHoSo, onClose }) {
           <img className={styles.container__img} src={imgLogo} alt="img logo" />
           <div className={styles.right__text}>
             <h1 className={styles.container__title_text}>
-              HANOI <br /> <span>COLLEGE</span>
+              HANOI <span>COLLEGE</span>
             </h1>
             <p className={styles.container__title_text1}>
               TRƯỜNG CAO ĐẲNG HÀ NỘI
@@ -95,7 +95,7 @@ function ModalQr({ maHoSo, onClose }) {
         <div className={styles.text__footer}>
           <p className={styles.container__text}>
             Lưu ý: Sau khi chuyển khoản thành công vui lòng liên hệ <br /> GVHD
-            hoặc Hotline:0976.862.442
+            hoặc Hotline: 0976.862.442
           </p>
         </div>
       </div>

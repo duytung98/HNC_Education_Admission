@@ -26,6 +26,7 @@ class HoSoXetTuyenController extends Controller
             $canbo = auth('api/canbo')->user();
             $user = auth('api')->user();
             if ($canbo || $user) {
+                $currentYear = Carbon::now()->year;
                 $result = HoSo::with([
                     'xetTuyen' => function ($query) {
                         $query->select('HoSo_ID', 'TrangThai', 'HinhThuc', 'DiemTB10', 'DiemTB11', 'DiemHKI12', 'GhiChu');
@@ -40,6 +41,7 @@ class HoSoXetTuyenController extends Controller
                     ->whereHas('xetTuyen', function ($query) {
                         $query->where('TrangThai', '=', null);
                     })
+                    ->whereYear('NgayNop', $currentYear)
                     ->get();
 
                 $result->each(function ($item) {
@@ -63,6 +65,7 @@ class HoSoXetTuyenController extends Controller
             $canbo = auth('api/canbo')->user();
             $user = auth('api')->user();
             if ($canbo || $user) {
+                $currentYear = Carbon::now()->year;
                 $data = HoSo::with([
                     'xetTuyen',
                     'minhChung',
@@ -71,6 +74,7 @@ class HoSoXetTuyenController extends Controller
                     ->where(function ($query) use ($id) {
                         $query->where('MaHoSo', $id);
                     })
+                    ->whereYear('NgayNop', $currentYear)
                     ->orderBy('NgayNop', 'asc')
                     ->first();
 
