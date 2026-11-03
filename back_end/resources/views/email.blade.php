@@ -25,7 +25,7 @@
                         </td>
                         <td class="wrap_nav_right" style="width:75%">
                             <div class="wrap_nav_right-top">
-                                <p class="wrap_nav_right-top-bldtb">BỘ LAO ĐỘNG - THƯƠNG BINH VÀ XÃ HỘI</p>
+                                <p class="wrap_nav_right-top-bldtb">BỘ GIÁO DỤC VÀ ĐÀO TẠO</p>
                                 <P class="wrap_nav_right-top-tcdhn">TRƯỜNG CAO ĐẲNG HÀ NỘI</P>
                             </div>
 

@@ -457,7 +457,7 @@ function ApplyForAdmissionPage() {
             </div>
             <div className={cx("header-brand")}>
               <h3 className={cx("header-brand-subtitle", "text-center")}>
-                BỘ LAO ĐỘNG - THƯƠNG BINH VÀ XÃ HỘI
+                BỘ GIÁO DỤC VÀ ĐÀO TẠO
               </h3>
               <h3 className={cx("header-brand-title", "text-center")}>
                 TRƯỜNG CAO ĐẲNG HÀ NỘI

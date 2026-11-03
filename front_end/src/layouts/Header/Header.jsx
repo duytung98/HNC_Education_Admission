@@ -15,7 +15,7 @@ function Header() {
                     <div
                         className={cx('header-logo-brand', 'font-bold uppercase ml-10 text-center')}
                     >
-                        <h3>Bộ lao động thương binh và xã hội</h3>
+                        <h3>BỘ GIÁO DỤC VÀ ĐÀO TẠO</h3>
                         <h3>Trường Cao đẳng Hà Nội</h3>
                     </div>
                 </div>
