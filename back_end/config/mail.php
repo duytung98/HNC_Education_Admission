@@ -40,7 +40,7 @@ return [
             'host' => 'smtp.gmail.com',
             'port' =>  587,
             'encryption' => 'tls',
-            'username' => 'caodanghanoi.hnc@gmail.com',
+            'username' => 'duytung1998vp@gmail.com',
             'password' => 'twsa dyyc sosi mjsp',
             'timeout' => null,
             'local_domain' => env('MAIL_EHLO_DOMAIN'),
@@ -108,7 +108,7 @@ return [
     */
 
     'from' => [
-        'address' => 'caodanghanoi.hnc@gmail.com',
+        'address' => 'duytung1998vp@gmail.com',
         'name' => 'Trường Cao Đẳng Hà Nội',
     ],
 
