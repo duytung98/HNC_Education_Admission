@@ -63,7 +63,7 @@ function HomePage() {
                                 <h3 className={styles.desription__school}>
                                     <a href="https://caodanghanoi.edu.vn/">Trường Cao Đẳng Hà Nội</a>
                                 </h3>
-                                <p className={styles.description__name}>©2024 Developed by HPC - v1.0</p>
+                                <p className={styles.description__name}>©2026 Developed by UTC - v1.0</p>
                             </div>
                         </div>
                     </div>
