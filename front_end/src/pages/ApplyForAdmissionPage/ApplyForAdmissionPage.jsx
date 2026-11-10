@@ -707,7 +707,7 @@ function ApplyForAdmissionPage() {
                       <span className={cx("text-red-600 mr-1")}>*</span>
                       Hộ khẩu thường trú
                     </label>
-                    <div className={cx("content-full-item")}>
+                    <div className={cx("content-full-item", "content-grid-item-2")}>
                       <div className={cx('content-howtel-tinh', 'content-input-select')}>
                         <Select
                           options={cityList}
@@ -734,7 +734,7 @@ function ApplyForAdmissionPage() {
                           <p className={cx("message")}> </p>
                         )}
                       </div>
-                      <div className={cx("content-howtel-huyen")}>
+                      {/* <div className={cx("content-howtel-huyen")}>
                         <Select
                           options={districtList}
                           className={cx('content-item-input', 'content-input-select')}
@@ -758,7 +758,7 @@ function ApplyForAdmissionPage() {
                         ) : (
                           <p className={cx("message")}> </p>
                         )}
-                      </div>
+                      </div> */}
                       <div className={cx("content-howtel-xa")}>
                         <Select
                           options={communelist}
