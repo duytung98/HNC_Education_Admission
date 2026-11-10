@@ -1,9 +1,9 @@
 const request = {
   apiUrlBaseYHN: process.env.REACT_APP_BASE_URL_API_YHN,
   apiNationYNH: '/dan-toc-ton-giao/dan-toc',
-  apiCityYHN: '/don-vi-hanh-chinh/tinh',
+  apiCityHNC: 'api/v1/tinh',
   apiDistrictYHN: '/don-vi-hanh-chinh/quan-huyen/maTinh/',
-  apiCommuneYHN: '/don-vi-hanh-chinh/xa-phuong/ma-quan-huyen/',
+  apiCommuneHNC: 'api/v1/xa/',
   apiCitySchoolYHN: '/truong-thpt/tinh-tp',
   apiDistrictSchoolYHN: '/truong-thpt/quan-huyen/tinh-tp/',
   apiUrlBaseHNC: process.env.REACT_APP_BASE_URL_API_HNC,

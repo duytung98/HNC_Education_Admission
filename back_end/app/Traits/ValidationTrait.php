@@ -19,7 +19,7 @@ trait ValidationTrait
             'SDT' => 'required|regex:/^0[1-9][0-9]{8,9}$/|unique:tb_hoso,SDT,' .$id.'',
             'MaTinh' => 'required|string|max:11',
             'MaPhuongXa' => 'required|string|max:11',
-            'MaQuanHuyen' => 'required|string|max:11',
+            // 'MaQuanHuyen' => 'required|string|max:11',
             'MaTinhTruong' => 'required|string|max:11',
             'MaQuanHuyenTruong' => 'required|string|max:11',
             'TenTruong' => 'required|string|max:255',

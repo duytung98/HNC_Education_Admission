@@ -13,8 +13,8 @@ export const getNationListService = async () => {
 
 export const getCityListService = async () => {
   try {
-    const url = request.apiUrlBaseYHN + request.apiCityYHN;
-    const res = await getYHN(url);
+    const url = request.apiUrlBaseHNC + request.apiCityHNC;
+    const res = await getHNC(url);
     const data = res.data;
     return data;
   } catch (e) { }
@@ -44,11 +44,12 @@ export const getDistrictListOfSchoolService = async (maTinh) => {
   } catch (e) { }
 };
 
-export const getCommunelistService = async (maHuyen) => {
+export const getCommunelistService = async (maTinh) => {
   try {
-    const url = request.apiUrlBaseYHN + request.apiCommuneYHN + maHuyen;
-    const res = await getYHN(url);
+    const url = request.apiUrlBaseHNC + request.apiCommuneHNC + maTinh;
+    const res = await getHNC(url);
     return res.data;
+
   } catch (e) { }
 };
 

@@ -5,6 +5,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CanboController;
 use App\Http\Controllers\NganhController;
 use App\Http\Controllers\HoSoXetTuyenController;
+use App\Http\Controllers\TinhController;
+use App\Http\Controllers\XaController;
 use App\Http\Controllers\XetTuyenClientController;
 
 /*
@@ -49,3 +51,8 @@ Route::prefix('canbo')->middleware('api')->group(function () {
     Route::post('logout', [CanboController::class, 'logout']);
     Route::post('refresh', [CanboController::class, 'refresh']);
 });
+
+
+//Ds Nganh
+Route::get('tinh', [TinhController::class, 'getTinh']);
+Route::get('xa/{id}', [XaController::class, 'getXa']);

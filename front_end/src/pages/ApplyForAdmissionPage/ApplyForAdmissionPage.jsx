@@ -130,7 +130,8 @@ function ApplyForAdmissionPage() {
   useEffect(() => {
     const getCommunelist = async () => {
       try {
-        const data = (await getCommunelistService(maHuyen)) || [];
+        console.log('sau khi chon tinh xong thi chay vao day')
+        const data = (await getCommunelistService(maTinh)) || [];
         const dataFormated = data.map((item) => {
           return {
             value: item?.ma,
@@ -143,7 +144,7 @@ function ApplyForAdmissionPage() {
       }
     };
     getCommunelist();
-  }, [maHuyen, navigate]);
+  }, [maTinh, navigate]);
 
   // Call api lấy danh sách thành phố của Schools
   useEffect(() => {
@@ -269,7 +270,7 @@ function ApplyForAdmissionPage() {
       formik.errors.Email = res?.errors.Email;
       formik.errors.SDT = res?.errors.SDT;
       formik.errors.MaTinh = res?.errors.MaTinh;
-      formik.errors.MaQuanHuyen = res?.errors.MaQuanHuyen;
+      // formik.errors.MaQuanHuyen = res?.errors.MaQuanHuyen;
       formik.errors.MaPhuongXa = res?.errors.MaPhuongXa;
       formik.errors.DiaChi = res?.errors.DiaChi;
       formik.errors.MaTinhTruong = res?.errors.MaTinhTruong;
@@ -295,7 +296,7 @@ function ApplyForAdmissionPage() {
       DanToc: "Kinh",
       SDT: "",
       MaTinh: '',
-      MaQuanHuyen: '',
+      // MaQuanHuyen: '',
       MaPhuongXa: '',
       MaTinhTruong: '',
       MaQuanHuyenTruong: '',
@@ -324,7 +325,7 @@ function ApplyForAdmissionPage() {
         .required('Vui lòng nhập thông tin!')
         .matches(/^[0][0-9]{9}$/, 'Số điện thoại không hợp lệ!'),
       MaTinh: Yup.string().required('Vui lòng chọn thông tin!'),
-      MaQuanHuyen: Yup.string().required('Vui lòng chọn thông tin!'),
+      // MaQuanHuyen: Yup.string().required('Vui lòng chọn thông tin!'),
       MaPhuongXa: Yup.string().required('Vui lòng chọn thông tin!'),
       MaTinhTruong: Yup.string().required('Vui lòng  chọn thông tin!'),
       MaQuanHuyenTruong: Yup.string().required('Vui lòng chọn thông tin!'),
@@ -718,7 +719,7 @@ function ApplyForAdmissionPage() {
                             setMaHuyen('');
                             setMaXa('');
                             formik.values.MaTinh = value;
-                            formik.values.MaQuanHuyen = '';
+                            // formik.values.MaQuanHuyen = '';
                             formik.values.MaPhuongXa = '';
                             if (value)
                               formik.errors.MaTinh = '';
