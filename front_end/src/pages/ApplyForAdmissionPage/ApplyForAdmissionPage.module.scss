@@ -544,3 +544,7 @@
         height: calc(200px - 16px);
     }
 }
+
+.content-grid-item-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}

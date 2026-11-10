@@ -861,7 +861,7 @@ function ApplyForAdmissionPage() {
                       className={cx("content-item-label")}
                     >
                       <span className={cx("text-red-600 mr-1")}>*</span>
-                      Quận / Huyện
+                      Xã / Phường
                     </label>
                     <Select
                       options={districtsOfSchool}
@@ -876,7 +876,7 @@ function ApplyForAdmissionPage() {
                         setTruongTHPT(null);
                         setMaHuyenTHPT(value);
                       }}
-                      placeholder='Chọn Quận / Huyện'
+                      placeholder='Chọn Xã / Phường'
                     />
                     {(formik.errors?.MaQuanHuyenTruong && formik.touched.MaQuanHuyenTruong) ||
                       errors?.MaQuanHuyenTruong ?
