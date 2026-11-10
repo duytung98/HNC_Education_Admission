@@ -8,6 +8,7 @@ export const requestYHN = axios.create({
 });
 
 export const requestHNC = axios.create({
+    baseURL: request.apiUrlBaseHNC,
     timeout: 10000
 });
 
